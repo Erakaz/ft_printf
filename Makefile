@@ -8,7 +8,7 @@ MAKE_LIB = ar -rcs
 INCS = .
 
 
-SRCS = {$.wildcard *.c}
+SRCS = $(wildcard *.c)
 
 OBJS = $(SRCS:.c=.o)
 
