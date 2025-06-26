@@ -19,6 +19,7 @@ int ft_printf(const char *format, ...)
     int     i;
 
     i = 0;
+    len = 0;
     va_start(ap, format);
     while (format[i])
     {
