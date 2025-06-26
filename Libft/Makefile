@@ -1,12 +1,12 @@
 SRC = $(wildcard *.c)
 NAME = libft.a
 OBJS = ${SRC:.c=.o}
-CC = cc
+CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
 
-.c.o: 
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o: %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJS}
 	ar rcs ${NAME} ${OBJS}

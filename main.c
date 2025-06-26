@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    printf("Printf avec un i : %i", 5);
-    ft_printf("ft_printf avec un i : %i", 5);
+    printf("Printf avec un c : %c\n", 'a');
+    ft_printf("ft_printf avec un c : %c\n", 'a');
     return (0);
 }

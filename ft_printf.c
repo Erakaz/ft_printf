@@ -23,6 +23,7 @@ int ft_printf(const char *format, ...)
     va_start(ap, format);
     while (format[i])
     {
+        ft_putchar_fd(format[i], 1);
         if (format[i] == '%' && format[i + 1])
             i++;
         if (format[i] == 'c')
@@ -41,5 +42,6 @@ int ft_printf(const char *format, ...)
         }
         i++;
     }
+    va_end(ap);
     return (len);
 }

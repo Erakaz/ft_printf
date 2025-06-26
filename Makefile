@@ -7,9 +7,7 @@ MAKE_LIB = ar -rcs
 
 INCS = .
 
-
 SRCS = $(wildcard *.c)
-
 OBJS = $(SRCS:.c=.o)
 
 bonus : all
@@ -17,19 +15,21 @@ bonus : all
 all : $(NAME)
 
 $(NAME) : $(OBJS) $(LIBFT) 
+	cp $(LIBFT) $(NAME)
 	$(MAKE_LIB) $(NAME) $(OBJS)
 
 %.o : %.c
-	$(CC) $(CFLAGS) -c $< -I$(INCS) 
+	$(CC) $(CFLAGS) -c $< -I$(INCS) -o $@
 	
 $(LIBFT) :
 	cd $(LIBFT_PATH) && make 
-	cp $(LIBFT) $(NAME) 
 
 clean :
-	rm -rf $(OBJS) $(NAME)
+	rm -rf $(OBJS)
+	cd $(LIBFT_PATH) && make clean
 
 fclean : clean
+	rm -rf $(NAME)
 	cd $(LIBFT_PATH) && make fclean
 
 re: fclean all
