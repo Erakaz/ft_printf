@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 # include "Libft/libft.h"
 # include <stdarg.h>
 
@@ -19,4 +19,5 @@ int ft_printf_c(const char c);
 int ft_printf_s(const char *s);
 int ft_printf_base(int d, char *base);
 void ft_putnbr_base(int nbr, char *base);
+int ft_printf(const char *format, ...);
 #endif
