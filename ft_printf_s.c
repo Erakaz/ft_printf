@@ -12,7 +12,7 @@
 
 #include "libftprintf.h"
 
-int ft_printf_s(const char *s)
+int ft_printf_s(char *s)
 {
     int     len_s;
 

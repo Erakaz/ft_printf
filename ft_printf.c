@@ -40,4 +40,5 @@ int ft_printf(const char *format, ...)
         }
         i++;
     }
+    return (len);
 }
