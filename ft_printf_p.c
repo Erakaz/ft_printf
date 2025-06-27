@@ -22,6 +22,7 @@ int     ft_printf_p(void *p)
     ft_putstr_fd("0x", 1);
     if (adress == 0)
         ft_putchar_fd('0', 1);
-    ft_putnbr_base(adress, "0123456789abcdef");
+    else
+        ft_putnbr_base(adress, "0123456789abcdef");
     return (len);
 }
