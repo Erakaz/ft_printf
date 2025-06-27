@@ -18,6 +18,9 @@
 int ft_printf_c(const char c);
 int ft_printf_s(char *s);
 int ft_printf_base(int d, char *base);
+unsigned int ft_printf_unsigned(unsigned int u, char *base);
+int ft_printf_p(void *p);
 void ft_putnbr_base(int nbr, char *base);
+void ft_putnbr_unsigned(unsigned nbr, char *base);
 int ft_printf(const char *format, ...);
 #endif

@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbelfki <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 17:21:04 by zbelfki           #+#    #+#             */
-/*   Updated: 2025/06/25 17:39:23 by zbelfki          ###   ########.fr       */
+/*   Created: 2025/06/27 17:33:47 by zbelfki           #+#    #+#             */
+/*   Updated: 2025/06/27 17:33:49 by zbelfki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static int	checkchar(char *base)
+static unsigned int	checkchar(char *base)
 {
 	int		i;
 	int		j;
@@ -34,24 +34,19 @@ static int	checkchar(char *base)
 	return (0);
 }
 
-static void	ft_writenbr(int nbr, int baselen, char *base)
+static void	ft_writenbr(unsigned int nbr, unsigned int baselen, char *base)
 {
-	long long int		lnbr;
+	long long unsigned int		lnbr;
 
 	lnbr = nbr;
-	if (lnbr < 0)
-	{
-		lnbr = -lnbr;
-		ft_putchar_fd('-', 1);
-	}
 	if (lnbr >= baselen)
 		ft_writenbr(lnbr / baselen, baselen, base);
 	ft_putchar_fd(base[lnbr % baselen], 1);
 }
 
-void	ft_putnbr_base(int nbr, char *base)
+void	ft_putnbr_unsigned(unsigned nbr, char *base)
 {
-	int			baselen;
+	unsigned int			baselen;
 
 	baselen = ft_strlen(base);
 	if (baselen < 2)

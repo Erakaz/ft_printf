@@ -1,41 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_base.c                                   :+:      :+:    :+:   */
+/*   ft_printf_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbelfki <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 16:17:47 by zbelfki           #+#    #+#             */
-/*   Updated: 2025/06/25 17:39:44 by zbelfki          ###   ########.fr       */
+/*   Created: 2025/06/27 18:02:59 by zbelfki           #+#    #+#             */
+/*   Updated: 2025/06/27 18:03:00 by zbelfki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-static unsigned int	count(long long int n)
+static unsigned int    get_adress(void *p)
 {
-	unsigned int	count;
 
-	count = 0;
-	if (n < 0)
-	{
-		count += 1;
-		n = -n;
-	}
-	while (n >= 10)
-	{
-		n = n / 10;
-		count++;
-	}
-	count++;
-	return (count);
 }
 
-int ft_printf_base(int d, char *base)
+int     ft_printf_p(void *p)
 {
-    int len;
 
-    len = count(d);
-    ft_putnbr_base(d, base);
-    return (len);
 }

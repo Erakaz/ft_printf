@@ -23,23 +23,46 @@ int ft_printf(const char *format, ...)
     va_start(ap, format);
     while (format[i])
     {
-        ft_putchar_fd(format[i], 1);
         if (format[i] == '%' && format[i + 1])
+        {
             i++;
-        if (format[i] == 'c')
-        {
-            char c = (char)va_arg(ap, int);
-            len += ft_printf_c(c);
+            if (format[i] == 'c')
+            {
+                char c = (char)va_arg(ap, int);
+                len += ft_printf_c(c);
+            }
+            else if (format[i] == 's')
+            {
+                char *s = va_arg(ap, char*);
+                len += ft_printf_s(s);
+            }
+            else if (format[i] == 'i' || format[i] == 'd')
+            {
+                int i = va_arg(ap, int);
+                len += ft_printf_base(i, "0123456789");
+            }
+            else if (format[i] == 'u')
+            {
+                unsigned int u = va_arg(ap, unsigned int);
+                len += ft_printf_unsigned(u, "0123456789");
+            }
+            else if (format[i] == 'x')
+            {
+                unsigned int x = va_arg(ap, unsigned int);
+                len += ft_printf_unsigned(x, "0123456789abcdef");
+            }
+            else if (format[i] == 'X')
+            {
+                unsigned int X = va_arg(ap, unsigned int);
+                len += ft_printf_unsigned(X, "0123456789ABCDEF");
+            }
+            else if (format[i] == '%')
+            {
+                len += ft_printf_c('%');
+            }
         }
-        else if (format[i] == 's')
-        {
-            char *s = va_arg(ap, char*);
-            len += ft_printf_s(s);
-        }
-        else if (format[i] == '%')
-        {
-            len += ft_printf_c('%');
-        }
+        else
+            len += ft_printf_c(format[i]);
         i++;
     }
     va_end(ap);

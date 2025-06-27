@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_base.c                                   :+:      :+:    :+:   */
+/*   ft_printf_unsigned.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zbelfki <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/25 16:17:47 by zbelfki           #+#    #+#             */
-/*   Updated: 2025/06/25 17:39:44 by zbelfki          ###   ########.fr       */
+/*   Created: 2025/06/27 17:25:14 by zbelfki           #+#    #+#             */
+/*   Updated: 2025/06/27 17:25:15 by zbelfki          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,11 +31,11 @@ static unsigned int	count(long long int n)
 	return (count);
 }
 
-int ft_printf_base(int d, char *base)
+unsigned int ft_printf_unsigned(unsigned int u, char *base)
 {
     int len;
 
-    len = count(d);
-    ft_putnbr_base(d, base);
+    len = count(u);
+    ft_putnbr_unsigned(u, base);
     return (len);
 }

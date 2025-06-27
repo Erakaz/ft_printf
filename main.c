@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    printf("Printf avec un c : %c\n", 'a');
-    ft_printf("ft_printf avec un c : %c\n", 'a');
+    printf("Printf avec un int et un hexa : %d %x\n", 5, 255);
+    ft_printf("ft_printf avec un int et un hexa : %d %x\n", 5, 255);
     return (0);
 }
