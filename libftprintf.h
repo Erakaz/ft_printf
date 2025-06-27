@@ -22,5 +22,6 @@ unsigned int ft_printf_unsigned(unsigned int u, char *base);
 int ft_printf_p(void *p);
 void ft_putnbr_base(int nbr, char *base);
 void ft_putnbr_unsigned(unsigned nbr, char *base);
+unsigned int count(long long int n);
 int ft_printf(const char *format, ...);
 #endif

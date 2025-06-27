@@ -56,6 +56,11 @@ int ft_printf(const char *format, ...)
                 unsigned int X = va_arg(ap, unsigned int);
                 len += ft_printf_unsigned(X, "0123456789ABCDEF");
             }
+            else if (format[i] == 'p')
+            {
+                void *p = va_arg(ap, void*);
+                len += ft_printf_p(p);
+            }
             else if (format[i] == '%')
             {
                 len += ft_printf_c('%');
